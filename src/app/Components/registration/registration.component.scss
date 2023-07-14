@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.sub-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+.right-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    height: 300px;
+    width: 400px;
+}
+
+.label {
+    display: flex;
+    justify-content: space-around;
+}
+.label-email {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    width: 550px;
+}
+.mat-label-name {
+    width: 235px;
+}
+.mat-label {
+    width: 510px;
+}
+.button-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
