@@ -8,13 +8,26 @@
         <div>
           <p>
             <mat-form-field appearance="outline">
-              <mat-label>Email or Phone</mat-label>
+              <mat-label>Email</mat-label>
               <input
                 matInput
-                placeholder="Email or Phone"
+                placeholder="Email"
                 formControlName="email"
               />
               <mat-error>Email required</mat-error>
+            </mat-form-field>
+          </p>
+        </div>
+        <div>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>PassWord</mat-label>
+              <input
+                matInput
+                placeholder="Password"
+                formControlName="password"
+              />
+              <mat-error>Password required</mat-error>
             </mat-form-field>
           </p>
         </div>

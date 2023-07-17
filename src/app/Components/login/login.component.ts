@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
   // convenience getter for easy access to form fields
