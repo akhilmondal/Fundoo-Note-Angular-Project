@@ -1,32 +1,43 @@
-<div class="container">
-  <div class="div-container">
-    <h1>Fundoo</h1>
-    <h1>SignIn</h1>
-    <h2>to continue to Fundoo Note</h2>
-    <div>
-      <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Email or Phone</mat-label>
-          <input matInput placeholder="Email or Phone" />
-        </mat-form-field>
-      </p>
-    </div>
-    <div class="example-button-row">
-      <button mat-button color="primary">Forgot Email?</button>
-    </div>
-    <div>
-      <p>
-        Not your computer? Use Guest mode to sign in privately.<br />
-        <button mat-button color="primary">Learn more</button>
-      </p>
-    </div>
-    <div class="button-div">
-      <div class="example-button-row">
-        <button mat-button color="primary">Create account</button>
+<mat-card>
+  <form [formGroup] = "registerForm" (ngSubmit) = "onSubmit()">
+    <div class="container">
+      <div class="div-container">
+        <h1>Fundoo</h1>
+        <h1>SignIn</h1>
+        <h2>to continue to Fundoo Note</h2>
+        <div>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Email or Phone</mat-label>
+              <input
+                matInput
+                placeholder="Email or Phone"
+                formControlName="email"
+              />
+              <mat-error>Email required</mat-error>
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="example-button-row">
+          <button mat-button color="primary">Forgot Email?</button>
+        </div>
+        <div>
+          <p>
+            Not your computer? Use Guest mode to sign in privately.<br />
+            <button mat-button color="primary">Learn more</button>
+          </p>
+        </div>
+        <div class="button-div">
+          <div class="example-button-row">
+            <button mat-button color="primary" routerLink="/registration">
+              Create account
+            </button>
+          </div>
+          <div class="example-button-row">
+            <button mat-raised-button color="primary">Next</button>
+          </div>
+        </div>
       </div>
-      <div class="example-button-row">
-        <button mat-raised-button color="primary">Next</button>
-      </div>
     </div>
-  </div>
-</div>
+  </form>
+</mat-card>
