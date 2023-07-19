@@ -10,15 +10,16 @@ import { GetallnoteComponent } from './Components/getallnote/getallnote.componen
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
-  { path: 'dashboard', component: DashboardComponent },
   {
-    path: 'forget',
-    component: ForgetpasswordComponent,
+    path: 'dashboard',
+    component: DashboardComponent,
     children: [
       { path: 'createnote', component: CreatenoteComponent },
       { path: 'getallnote', component: GetallnoteComponent },
     ],
   },
+  { path: 'createnote', component: CreatenoteComponent },
+  { path: 'forget', component: ForgetpasswordComponent },
 ];
 
 @NgModule({
