@@ -1,0 +1,57 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img
+      src="https://e1.pngegg.com/pngimages/755/1015/png-clipart-macos-app-icons-google-keep-thumbnail.png"
+      alt="Logo"
+    />
+    <h1 class="example-app-name">Fundoo Note</h1>
+    <p class="search">
+      <mat-form-field class="input-search" appearance="outline">
+        <input matInput placeholder="Search" formControlName="Search" />
+      </mat-form-field>
+    </p>
+    <div class="icons">
+      <div class="icon-items">
+        <mat-icon>replay</mat-icon>
+      </div>
+      <div class="icon-items">
+        <mat-icon>view_agenda</mat-icon>
+      </div>
+      <div class="icon-items">
+        <mat-icon>settings</mat-icon>
+      </div>
+      <div class="icon-items">
+        <mat-icon>blur_on</mat-icon>
+      </div>
+      <div class="icon-items">
+        <mat-icon>account_circle</mat-icon>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container
+    class="example-sidenav-container"
+    [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+  >
+    <mat-sidenav
+      #snav
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56"
+    >
+      <mat-nav-list>
+        <a mat-list-item> <mat-icon>account_circle</mat-icon> Notes</a>
+        <a mat-list-item><mat-icon>notifications</mat-icon> Reminders</a>
+        <a mat-list-item><mat-icon>edit</mat-icon> Edit labels</a>
+        <a mat-list-item><mat-icon>archive</mat-icon> Archive</a>
+        <a mat-list-item><mat-icon>delete_sweep</mat-icon> Trash</a>
+      </mat-nav-list>
+    </mat-sidenav>
+  </mat-sidenav-container>
+</div>
+<div>
+  <app-createnote></app-createnote>
+</div>
