@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserServicesService } from 'src/app/Services/userServices/user-services.service';
 
+
 @Component({
-  selector: 'app-registration',
-  templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.scss'],
+  selector: 'app-forgetpassword',
+  templateUrl: './forgetpassword.component.html',
+  styleUrls: ['./forgetpassword.component.scss']
 })
-export class RegistrationComponent implements OnInit {
+export class ForgetpasswordComponent {
+  [x: string]: any;
+
   registerForm!: FormGroup;
   submitted = false;
 
@@ -15,13 +18,11 @@ export class RegistrationComponent implements OnInit {
     private formBuilder: FormBuilder,
     private user: UserServicesService
   ) {}
+
+
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassWord: ['', Validators.required],
     });
   }
   // convenience getter for easy access to form fields
@@ -33,16 +34,12 @@ export class RegistrationComponent implements OnInit {
     this.submitted = true;
     if (this.registerForm.valid) {
       let payload = {
-        firstName: this.registerForm.value.firstName,
-        lastName: this.registerForm.value.lastName,
         emailId: this.registerForm.value.email,
-        passWord: this.registerForm.value.confirmPassWord,
       };
       this.user
-        .register(payload)
-        .subscribe((Response: any) =>
-          console.log('Register Succesfully', Response)
-        );
+        .forgetPassword(payload)
+        .subscribe((Response: any) => console.log('Mail send Successfully for reset password:', Response));
     }
   }
+
 }
