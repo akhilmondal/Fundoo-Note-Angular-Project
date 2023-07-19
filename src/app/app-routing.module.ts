@@ -14,11 +14,9 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
     children: [
-      { path: 'createnote', component: CreatenoteComponent },
       { path: 'getallnote', component: GetallnoteComponent },
     ],
   },
-  { path: 'createnote', component: CreatenoteComponent },
   { path: 'forget', component: ForgetpasswordComponent },
 ];
 
