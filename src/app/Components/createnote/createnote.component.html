@@ -1,21 +1,142 @@
-<div class="container">
+<!-- <div class="container">
   <mat-card>
     <div class="div-container">
       <p>
         <mat-form-field *ngIf="showDescription">
-          <input matInput placeholder="Title" formControlName="title" />
+          <input
+            class="create-note-input"
+            placeholder="Title"
+          />
         </mat-form-field>
       </p>
       <p>
         <mat-form-field>
           <input
-            matInput
+            class="create-note-input"
             placeholder="Take a Note"
-            formControlName="description"
             (click)="showDescription = true"
           />
         </mat-form-field>
       </p>
+    </div>
+    <div class="note-icons-container" *ngIf="showDescription">
+      <div class="note-icons">
+        <mat-icon
+          ><img
+            src="assets/add_alert_FILL0_wght400_GRAD0_opsz48.png"
+            alt="Collaborator"
+        /></mat-icon>
+        <mat-icon
+          ><img
+            src="assets/person_add_FILL0_wght400_GRAD0_opsz48.png"
+            alt="Collaborator"
+        /></mat-icon>
+        <mat-icon
+          ><img
+            src="assets/palette_FILL0_wght400_GRAD0_opsz48.png"
+            alt="Collaborator"
+        /></mat-icon>
+        <mat-icon
+          ><img
+            src="assets/image_FILL0_wght400_GRAD0_opsz48.png"
+            alt="Collaborator"
+        /></mat-icon>
+        <mat-icon
+          ><img
+            src="assets/archive_FILL0_wght400_GRAD0_opsz48.png"
+            alt="Collaborator"
+        /></mat-icon>
+        <mat-icon
+          ><img
+            src="assets/more_vert_FILL0_wght400_GRAD0_opsz48.png"
+            alt="Collaborator"
+        /></mat-icon>
+        <mat-icon
+          ><img
+            src="assets/undo_FILL0_wght400_GRAD0_opsz48.png"
+            alt="Collaborator"
+        /></mat-icon>
+        <mat-icon
+          ><img
+            src="assets/redo_FILL0_wght400_GRAD0_opsz48.png"
+            alt="Collaborator"
+        /></mat-icon>
+      </div>
+      <div class="button">
+        <div class="example-button-row">
+          <a mat-raised-button href="https://www.google.com/" target="_blank"
+            >close</a
+          >
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div> -->
+
+<div class="container">
+  <mat-card>
+    <div class="div-contain">
+      <p *ngIf="showDescription">
+        <input class="create-note-input" placeholder="Title" />
+      </p>
+      <p>
+        <input
+          class="create-note-input"
+          placeholder="Take a Note"
+          (click)="showDescription = true"
+        />
+      </p>
+    </div>
+    <div class="note-icons-container" *ngIf="showDescription">
+      <div class="note-icons">
+        <mat-icon
+          ><img
+            src="assets/add_alert_FILL0_wght400_GRAD0_opsz48.png"
+            alt="Collaborator"
+        /></mat-icon>
+        <mat-icon
+          ><img
+            src="assets/person_add_FILL0_wght400_GRAD0_opsz48.png"
+            alt="Collaborator"
+        /></mat-icon>
+        <mat-icon
+          ><img
+            src="assets/palette_FILL0_wght400_GRAD0_opsz48.png"
+            alt="Collaborator"
+        /></mat-icon>
+        <mat-icon
+          ><img
+            src="assets/image_FILL0_wght400_GRAD0_opsz48.png"
+            alt="Collaborator"
+        /></mat-icon>
+        <mat-icon
+          ><img
+            src="assets/archive_FILL0_wght400_GRAD0_opsz48.png"
+            alt="Collaborator"
+        /></mat-icon>
+        <mat-icon
+          ><img
+            src="assets/more_vert_FILL0_wght400_GRAD0_opsz48.png"
+            alt="Collaborator"
+        /></mat-icon>
+        <mat-icon
+          ><img
+            src="assets/undo_FILL0_wght400_GRAD0_opsz48.png"
+            alt="Collaborator"
+        /></mat-icon>
+        <mat-icon
+          ><img
+            src="assets/redo_FILL0_wght400_GRAD0_opsz48.png"
+            alt="Collaborator"
+        /></mat-icon>
+      </div>
+      <div class="button">
+        <div class="example-button-row">
+          <a mat-raised-button href="https://www.google.com/" target="_blank"
+            >close</a
+          >
+        </div>
+      </div>
     </div>
   </mat-card>
 </div>

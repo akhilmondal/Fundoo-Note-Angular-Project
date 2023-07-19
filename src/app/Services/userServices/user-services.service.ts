@@ -36,4 +36,5 @@ export class UserServicesService {
     return this.httpservice.putService('users/forgetpass', reqdata, false, header);
   }
 
+  
 }
