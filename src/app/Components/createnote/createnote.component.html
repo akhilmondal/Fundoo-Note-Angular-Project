@@ -1,1 +1,21 @@
-<p>createnote works!</p>
+<div class="container">
+  <mat-card>
+    <div class="div-container">
+      <p>
+        <mat-form-field *ngIf="showDescription">
+          <input matInput placeholder="Title" formControlName="title" />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Take a Note"
+            formControlName="description"
+            (click)="showDescription = true"
+          />
+        </mat-form-field>
+      </p>
+    </div>
+  </mat-card>
+</div>
