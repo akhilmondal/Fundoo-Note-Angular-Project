@@ -8,7 +8,6 @@ import { UserServicesService } from 'src/app/Services/userServices/user-services
   styleUrls: ['./registration.component.scss'],
 })
 export class RegistrationComponent implements OnInit {
-
   registerForm!: FormGroup;
   submitted = false;
 
@@ -16,7 +15,6 @@ export class RegistrationComponent implements OnInit {
     private formBuilder: FormBuilder,
     private user: UserServicesService
   ) {}
-  
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],

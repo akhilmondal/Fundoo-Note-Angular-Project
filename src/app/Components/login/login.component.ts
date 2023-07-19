@@ -38,7 +38,9 @@ export class LoginComponent implements OnInit {
       };
       this.user
         .login(payload)
-        .subscribe((Response: any) => console.log('Login Successful', Response));
+        .subscribe((Response: any) =>
+          console.log('Login Successful', Response)
+        );
     }
   }
 }
