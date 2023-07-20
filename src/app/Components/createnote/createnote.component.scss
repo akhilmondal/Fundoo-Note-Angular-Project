@@ -30,6 +30,8 @@ img {
   border: none;
   outline: none;
   font-size: 16px;
+  margin-left: 20px;
+  margin-top: 15px;
 }
 .note-icons-container{
   display: flex;
@@ -43,4 +45,7 @@ img {
 .button {
   margin-right: 20px;
   margin-bottom: 5px;
+}
+input {
+  width: 470px;
 }

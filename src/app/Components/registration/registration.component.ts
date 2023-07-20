@@ -21,7 +21,7 @@ export class RegistrationComponent implements OnInit {
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassWord: ['', Validators.required],
+      confirmPassWord: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
   // convenience getter for easy access to form fields

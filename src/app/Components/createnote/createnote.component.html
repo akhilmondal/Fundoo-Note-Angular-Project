@@ -77,64 +77,28 @@
   <mat-card>
     <div class="div-contain">
       <p *ngIf="showDescription">
-        <input class="create-note-input" placeholder="Title" />
+        <input
+          class="create-note-input"
+          placeholder="Title"
+          [(ngModel)]="title"
+        />
       </p>
       <p>
         <input
           class="create-note-input"
           placeholder="Take a Note"
           (click)="showDescription = true"
+          [(ngModel)]="description"
         />
       </p>
     </div>
     <div class="note-icons-container" *ngIf="showDescription">
-      <div class="note-icons">
-        <mat-icon
-          ><img
-            src="assets/add_alert_FILL0_wght400_GRAD0_opsz48.png"
-            alt="Collaborator"
-        /></mat-icon>
-        <mat-icon
-          ><img
-            src="assets/person_add_FILL0_wght400_GRAD0_opsz48.png"
-            alt="Collaborator"
-        /></mat-icon>
-        <mat-icon
-          ><img
-            src="assets/palette_FILL0_wght400_GRAD0_opsz48.png"
-            alt="Collaborator"
-        /></mat-icon>
-        <mat-icon
-          ><img
-            src="assets/image_FILL0_wght400_GRAD0_opsz48.png"
-            alt="Collaborator"
-        /></mat-icon>
-        <mat-icon
-          ><img
-            src="assets/archive_FILL0_wght400_GRAD0_opsz48.png"
-            alt="Collaborator"
-        /></mat-icon>
-        <mat-icon
-          ><img
-            src="assets/more_vert_FILL0_wght400_GRAD0_opsz48.png"
-            alt="Collaborator"
-        /></mat-icon>
-        <mat-icon
-          ><img
-            src="assets/undo_FILL0_wght400_GRAD0_opsz48.png"
-            alt="Collaborator"
-        /></mat-icon>
-        <mat-icon
-          ><img
-            src="assets/redo_FILL0_wght400_GRAD0_opsz48.png"
-            alt="Collaborator"
-        /></mat-icon>
+      <div>
+        <app-notepanel></app-notepanel>
       </div>
       <div class="button">
         <div class="example-button-row">
-          <a mat-raised-button href="https://www.google.com/" target="_blank"
-            >close</a
-          >
+          <a mat-raised-button target="_blank">close</a>
         </div>
       </div>
     </div>

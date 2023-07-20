@@ -8,9 +8,7 @@ import { UserServicesService } from 'src/app/Services/userServices/user-services
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  [x: string]: any;
-
-  registerForm!: FormGroup;
+  loginForm!: FormGroup;
   submitted = false;
 
   constructor(
@@ -19,28 +17,27 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.registerForm = this.formBuilder.group({
+    this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
   // convenience getter for easy access to form fields
   get f() {
-    return this.registerForm.controls;
+    return this.loginForm.controls;
   }
 
   onSubmit() {
     this.submitted = true;
-    if (this.registerForm.valid) {
+    if (this.loginForm.valid) {
       let payload = {
-        emailId: this.registerForm.value.email,
-        passWord: this.registerForm.value.password,
+        emailId: this.loginForm.value.email,
+        passWord: this.loginForm.value.password,
       };
-      this.user
-        .login(payload)
-        .subscribe((Response: any) =>
-          console.log('Login Successful', Response)
-        );
+      this.user.login(payload).subscribe((response: any) => {
+        console.log('Login Successful', response);
+        localStorage.setItem('token', response.userToken);
+      });
     }
   }
 }

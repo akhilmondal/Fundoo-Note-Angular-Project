@@ -36,6 +36,14 @@ img {
   height: 50px;
 }
 
+.img-icon {
+  margin-top: 0%;
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+  height: 20px;
+}
+
 mat-toolbar {
   border-bottom: solid rgb(41, 39, 39) 1px;
 }
@@ -61,4 +69,18 @@ mat-toolbar {
 .icon-items {
   margin: 20px;
   padding: 5px;
+  
+}
+
+.nav-list {
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+
+  a {
+    border-radius: 15%;
+  }
+  a:focus {
+    background-color: #feefc3;
+  }
 }
