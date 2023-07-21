@@ -20,15 +20,13 @@ export class HttpServicesService {
     );
   }
 
-  putService(
+  getService(
     url: string,
-    reqdata: any,
     token: boolean = false,
     httpOptions: any
   ) {
-    return this.httpClient.put(
+    return this.httpClient.get(
       this.baseurl + url,
-      reqdata,
       token && httpOptions
     );
   }
