@@ -27,6 +27,7 @@ import { ForgetpasswordComponent } from './Components/forgetpassword/forgetpassw
 import { CreatenoteComponent } from './Components/createnote/createnote.component';
 import { GetallnoteComponent } from './Components/getallnote/getallnote.component';
 import { NotepanelComponent } from './Components/notepanel/notepanel.component';
+import { DisplaynotesComponent } from './Components/displaynotes/displaynotes.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { NotepanelComponent } from './Components/notepanel/notepanel.component';
     ForgetpasswordComponent,
     CreatenoteComponent,
     GetallnoteComponent,
-    NotepanelComponent
+    NotepanelComponent,
+    DisplaynotesComponent
   ],
   imports: [
     BrowserModule,

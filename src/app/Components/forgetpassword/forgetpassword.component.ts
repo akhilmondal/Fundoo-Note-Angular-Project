@@ -11,7 +11,7 @@ import { UserServicesService } from 'src/app/Services/userServices/user-services
 export class ForgetpasswordComponent {
   [x: string]: any;
 
-  registerForm!: FormGroup;
+  forgetForm!: FormGroup;
   submitted = false;
 
   constructor(
@@ -21,24 +21,24 @@ export class ForgetpasswordComponent {
 
 
   ngOnInit() {
-    this.registerForm = this.formBuilder.group({
+    this.forgetForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
     });
   }
   // convenience getter for easy access to form fields
   get f() {
-    return this.registerForm.controls;
+    return this.forgetForm.controls;
   }
 
   onSubmit() {
     this.submitted = true;
-    if (this.registerForm.valid) {
+    if (this.forgetForm.valid) {
       let payload = {
-        emailId: this.registerForm.value.email,
+        emailId: this.forgetForm.value.email,
       };
-      this.user
-        .forgetPassword(payload)
-        .subscribe((Response: any) => console.log('Mail send Successfully for reset password:', Response));
+      // this.user
+      //   .forgetPassword(payload)
+      //   .subscribe((Response: any) => console.log('Mail send Successfully for reset password:', Response));
     }
   }
 
