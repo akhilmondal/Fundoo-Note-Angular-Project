@@ -4,23 +4,21 @@ import { NoteService } from 'src/app/Services/noteServices/note.service';
 @Component({
   selector: 'app-getallnote',
   templateUrl: './getallnote.component.html',
-  styleUrls: ['./getallnote.component.scss']
+  styleUrls: ['./getallnote.component.scss'],
 })
 export class GetallnoteComponent {
-  submitted = false
+  data: any = [];
 
-  constructor(
-    private note: NoteService
-  ) {}
-
-
-  onSubmit() {
-    this.submitted = true
-    if (this.submitted) {
-      this.note.getnote().subscribe((response: any) => {
-        console.log('Note fetched Successfully', response);
-      });
-    }
+  constructor(private note: NoteService) {}
+  ngOnInit() {
+    this.onSubmit();
   }
 
+  onSubmit() {
+    this.note.getnote().subscribe((response: any) => {
+      console.log(response);
+      this.data = response.data;
+      console.log(this.data);
+    });
+  }
 }
