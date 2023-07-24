@@ -14,14 +14,21 @@ export class NotepanelComponent {
   showOptions() {
     this.options = true;
   }
-  ngOnInit(){
-  
-  }
+  ngOnInit() {}
   trashNote() {
-    let payload={
-      id: [this.childMessage._id]
-    }
+    let payload = {
+      id: [this.childMessage._id],
+    };
     this.note.trashNoteById(payload).subscribe((response: any) => {
+      console.log(response);
+    });
+  }
+
+  archiveNote() {
+    let payload = {
+      id: [this.childMessage._id],
+    };
+    this.note.archiveNoteById(payload).subscribe((response: any) => {
       console.log(response);
     });
   }
