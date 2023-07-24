@@ -1,1 +1,18 @@
-<p>trash works!</p>
+<div>
+  <div class="container">
+    <mat-card
+      *ngFor="let items of data"
+      (mouseenter)="showPanel(items)"
+      (mouseleave)="hidePanel()"
+    >
+      <div>
+        <h2>{{ items.title }}</h2>
+        <h3>{{ items.description }}</h3>
+        <h1>Hello</h1>
+      </div>
+      <div *ngIf="hovered && items === activeItem">
+        <app-notepanel></app-notepanel>
+      </div>
+    </mat-card>
+  </div>
+</div>
