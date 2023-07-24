@@ -1,5 +1,3 @@
-
-
 <div class="container">
   <mat-card>
     <div class="div-contain">
@@ -20,12 +18,26 @@
       </p>
     </div>
     <div class="note-icons-container" *ngIf="showDescription">
-      <div>
-        <app-notepanel></app-notepanel>
+      <div class="icon-container">
+        <div>
+          <app-notepanel></app-notepanel>
+        </div>
+        <div>
+          <mat-icon
+            ><img
+              src="assets/undo_FILL0_wght400_GRAD0_opsz48.png"
+              alt="Collaborator"
+          /></mat-icon>
+          <mat-icon
+            ><img
+              src="assets/redo_FILL0_wght400_GRAD0_opsz48.png"
+              alt="Collaborator"
+          /></mat-icon>
+        </div>
       </div>
       <div class="button">
         <div class="example-button-row">
-          <a mat-raised-button target="_blank" (click)="onSubmit()">close</a>
+          <a mat-button (click)="onSubmit()">close</a>
         </div>
       </div>
     </div>

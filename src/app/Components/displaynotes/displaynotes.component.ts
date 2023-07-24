@@ -7,4 +7,17 @@ import { Component, Input } from '@angular/core';
 })
 export class DisplaynotesComponent {
   @Input() notes: any = [];
+  hovered: boolean = false;
+  activeItem: string | null = null;
+
+  showPanel(item: string) {
+    this.hovered = true;
+    this.activeItem = item;
+
+  }
+
+  hidePanel() {
+    this.hovered = false;
+    this.activeItem = null;
+  }
 }

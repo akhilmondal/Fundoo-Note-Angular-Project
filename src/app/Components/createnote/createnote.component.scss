@@ -37,6 +37,11 @@ img {
   display: flex;
   justify-content: space-between;
 }
+.icon-container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
 .note-icons {
   display: flex;
   justify-content: space-between;
