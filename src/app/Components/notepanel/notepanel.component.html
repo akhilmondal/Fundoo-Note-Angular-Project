@@ -1,42 +1,55 @@
 <div class="note-icons">
-    <mat-icon
-      ><img
-        src="assets/add_alert_FILL0_wght400_GRAD0_opsz48.png"
-        alt="Collaborator"
-    /></mat-icon>
-    <mat-icon
-      ><img
-        src="assets/person_add_FILL0_wght400_GRAD0_opsz48.png"
-        alt="Collaborator"
-    /></mat-icon>
-    <mat-icon
-      ><img
-        src="assets/palette_FILL0_wght400_GRAD0_opsz48.png"
-        alt="Collaborator"
-    /></mat-icon>
-    <mat-icon
-      ><img
-        src="assets/image_FILL0_wght400_GRAD0_opsz48.png"
-        alt="Collaborator"
-    /></mat-icon>
-    <mat-icon
-      ><img
-        src="assets/archive_FILL0_wght400_GRAD0_opsz48.png"
-        alt="Collaborator"
-    /></mat-icon>
-    <mat-icon
-      ><img
-        src="assets/more_vert_FILL0_wght400_GRAD0_opsz48.png"
-        alt="Collaborator"
-    /></mat-icon>
-    <mat-icon
-      ><img
-        src="assets/undo_FILL0_wght400_GRAD0_opsz48.png"
-        alt="Collaborator"
-    /></mat-icon>
-    <mat-icon
-      ><img
-        src="assets/redo_FILL0_wght400_GRAD0_opsz48.png"
-        alt="Collaborator"
-    /></mat-icon>
-  </div>
+  <mat-icon
+    ><img
+      src="assets/add_alert_FILL0_wght400_GRAD0_opsz48.png"
+      alt="Collaborator"
+  /></mat-icon>
+  <mat-icon
+    ><img
+      src="assets/person_add_FILL0_wght400_GRAD0_opsz48.png"
+      alt="Collaborator"
+  /></mat-icon>
+  <mat-icon
+    ><img
+      src="assets/palette_FILL0_wght400_GRAD0_opsz48.png"
+      alt="Collaborator"
+  /></mat-icon>
+  <mat-icon
+    ><img src="assets/image_FILL0_wght400_GRAD0_opsz48.png" alt="Collaborator"
+  /></mat-icon>
+  <mat-icon
+    ><img
+      src="assets/archive_FILL0_wght400_GRAD0_opsz48.png"
+      alt="Collaborator"
+  /></mat-icon>
+  <mat-icon
+    ><img
+      src="assets/more_vert_FILL0_wght400_GRAD0_opsz48.png"
+      alt="Collaborator"
+      (click)="showOptions()"
+  /></mat-icon>
+</div>
+<div>
+  <mat-card>
+    <div *ngIf="options" class="example-button-row">
+      <div>
+        <button mat-button (click)="trashNote()">Delete note</button>
+      </div>
+      <div>
+        <button mat-button>Add label</button>
+      </div>
+      <div>
+        <button mat-button>Add drawing</button>
+      </div>
+      <div>
+        <button mat-button>Make a copy</button>
+      </div>
+      <div>
+        <button mat-button>Show checkboxes</button>
+      </div>
+      <div>
+        <button mat-button>Copy to Google Docs</button>
+      </div>
+    </div>
+  </mat-card>
+</div>

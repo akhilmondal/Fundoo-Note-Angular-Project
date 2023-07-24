@@ -1,8 +1,17 @@
 <div>
   <div class="container">
-    <mat-card *ngFor="let item of notes">
-      <h2>{{ item.title }}</h2>
-      <h3>{{ item.description }}</h3>
+    <mat-card
+      *ngFor="let item of notes"
+      (mouseenter)="showPanel(item)"
+      (mouseleave)="hidePanel()"
+    >
+      <div>
+        <h2>{{ item.title }}</h2>
+        <h3>{{ item.description }}</h3>
+      </div>
+      <div *ngIf="hovered && item === activeItem">
+        <app-notepanel [childMessage] = 'item'></app-notepanel>
+      </div>
     </mat-card>
   </div>
 </div>
