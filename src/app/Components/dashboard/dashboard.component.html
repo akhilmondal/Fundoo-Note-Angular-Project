@@ -43,11 +43,11 @@
       fixedTopGap="56"
     >
       <mat-nav-list class="nav-list">
-        <a mat-list-item><img class="img-icon" src="assets/lightbulb_FILL0_wght400_GRAD0_opsz48.png" alt=""> Notes</a>
+        <a mat-list-item routerLink="/dashboard/getallnote"><img class="img-icon" src="assets/lightbulb_FILL0_wght400_GRAD0_opsz48.png" alt=""> Notes</a>
         <a mat-list-item><img class="img-icon" src="assets/notifications_FILL0_wght400_GRAD0_opsz48.png" alt=""> Reminders</a>
         <a mat-list-item><img class="img-icon" src="assets/edit_FILL0_wght400_GRAD0_opsz48.png" alt=""> Edit labels</a>
-        <a mat-list-item><img class="img-icon" src="assets/archive_FILL0_wght400_GRAD0_opsz48.png" alt=""> Archive</a>
-        <a mat-list-item><img class="img-icon" src="assets/delete_FILL0_wght400_GRAD0_opsz48.png" alt="" routerLink="/app-trash"> Trash</a>
+        <a mat-list-item routerLink="/dashboard/archive"><img class="img-icon" src="assets/archive_FILL0_wght400_GRAD0_opsz48.png" alt=""> Archive</a>
+        <a mat-list-item routerLink="/dashboard/trash"><img class="img-icon" src="assets/delete_FILL0_wght400_GRAD0_opsz48.png" alt="">Trash</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
