@@ -6,6 +6,7 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { ForgetpasswordComponent } from './Components/forgetpassword/forgetpassword.component';
 import { CreatenoteComponent } from './Components/createnote/createnote.component';
 import { GetallnoteComponent } from './Components/getallnote/getallnote.component';
+import { TrashComponent } from './Components/trash/trash.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       { path: 'getallnote', component: GetallnoteComponent },
+      { path: 'trash', component: TrashComponent },
     ],
   },
   { path: 'forget', component: ForgetpasswordComponent },
