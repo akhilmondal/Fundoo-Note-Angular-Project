@@ -64,4 +64,18 @@ export class NoteService {
       header
     );
   }
+  deleteNoteById(reqdata: any) {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        Authorization: 'bearer ' + this.token,
+      }),
+    };
+    return this.httpService.deleteService(
+      `/notes/${reqdata.id}`,
+      reqdata,
+      true,
+      header
+    );
+  }
 }

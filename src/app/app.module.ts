@@ -28,6 +28,7 @@ import { NotepanelComponent } from './Components/notepanel/notepanel.component';
 import { DisplaynotesComponent } from './Components/displaynotes/displaynotes.component';
 import { ArchiveComponent } from './Components/archive/archive.component';
 import { TrashComponent } from './Components/trash/trash.component';
+import { TrashpanelComponent } from './Components/trashpanel/trashpanel.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { TrashComponent } from './Components/trash/trash.component';
     DisplaynotesComponent,
     ArchiveComponent,
     TrashComponent,
+    TrashpanelComponent,
   ],
   imports: [
     BrowserModule,

@@ -38,4 +38,12 @@ export class TrashComponent {
       //console.log(this.trashData);
     });
   }
+  // deleteNote(item:any) {
+  //   let payload = {
+  //     id: [this.item._id],
+  //   };
+  //   this.note.deleteNoteById().subscribe((response: any) => {
+  //     console.log(response);
+  //   });
+  // }
 }
