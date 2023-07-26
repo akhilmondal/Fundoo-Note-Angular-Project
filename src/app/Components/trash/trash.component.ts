@@ -35,15 +35,6 @@ export class TrashComponent {
       this.data = this.data.filter((item: any) => {
         return item.trash == true;
       });
-      //console.log(this.trashData);
     });
   }
-  // deleteNote(item:any) {
-  //   let payload = {
-  //     id: [this.item._id],
-  //   };
-  //   this.note.deleteNoteById().subscribe((response: any) => {
-  //     console.log(response);
-  //   });
-  // }
 }
