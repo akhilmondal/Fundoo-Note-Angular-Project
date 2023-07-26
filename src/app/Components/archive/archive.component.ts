@@ -31,7 +31,6 @@ export class ArchiveComponent {
       console.log(response);
       this.data = response.data;
 
-      console.log(this.data);
       this.data = this.data.filter((item: any) => {
         return item.archive == true;
       });

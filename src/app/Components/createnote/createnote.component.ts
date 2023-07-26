@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { NoteService } from 'src/app/Services/noteServices/note.service';
 
 @Component({
@@ -11,6 +11,7 @@ export class CreatenoteComponent {
   showDescription: boolean = false;
   title:any;
   description: any;
+  @Output() createEvent = new EventEmitter<boolean>();
   constructor(
     private note: NoteService
   ) {}
@@ -27,6 +28,7 @@ export class CreatenoteComponent {
         console.log('Note created Successfully', response);
       });
     }
+    this.createEvent.emit(this.submitted)
   }
 }
 

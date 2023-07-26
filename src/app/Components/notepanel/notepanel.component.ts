@@ -8,9 +8,11 @@ import { NoteService } from 'src/app/Services/noteServices/note.service';
 })
 export class NotepanelComponent {
   options: boolean = false;
-  trashMessage: string = "Note trashed Successfully"
+  trashMessage: string = 'Note trashed Successfully';
   @Input() childMessage: any;
   @Output() trashEvent = new EventEmitter<string>();
+  @Output() archiveEvent = new EventEmitter<string>();
+
   constructor(private note: NoteService) {}
 
   showOptions() {
@@ -23,9 +25,8 @@ export class NotepanelComponent {
     };
     this.note.trashNoteById(payload).subscribe((response: any) => {
       console.log(response);
-      this.trashEvent.emit(response)
+      this.trashEvent.emit(response);
     });
-
   }
 
   archiveNote() {
@@ -34,6 +35,7 @@ export class NotepanelComponent {
     };
     this.note.archiveNoteById(payload).subscribe((response: any) => {
       console.log(response);
+      this.archiveEvent.emit(response);
     });
   }
 }
