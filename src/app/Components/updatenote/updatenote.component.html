@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="div-container">
+    <p>
+      <input class="note-title" [(ngModel)]="title" />
+    </p>
+    <p>
+      <input class="note-description" [(ngModel)]="description" />
+    </p>
+  </div>
+  <div class="note-icons-container">
+    <div class="icon-container">
+      <div>
+        <app-notepanel></app-notepanel>
+      </div>
+      <div>
+        <mat-icon
+          ><img
+            src="assets/undo_FILL0_wght400_GRAD0_opsz48.png"
+            alt="Collaborator"
+        /></mat-icon>
+        <mat-icon
+          ><img
+            src="assets/redo_FILL0_wght400_GRAD0_opsz48.png"
+            alt="Collaborator"
+        /></mat-icon>
+      </div>
+    </div>
+    <div class="button">
+      <div class="example-button-row">
+        <a mat-button (click)="[onClick(), onNoClick()]">close</a>
+      </div>
+    </div>
+  </div>
+</div>

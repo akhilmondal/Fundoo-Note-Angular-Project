@@ -6,11 +6,15 @@
       (mouseleave)="hidePanel()"
     >
       <div>
-        <h2>{{ item.title }}</h2>
-        <h3>{{ item.description }}</h3>
+        <div (click)="openDialog(item)">
+          <h2>{{ item.title }}</h2>
+        </div>
+        <div (click)="openDialog(item)">
+          <h3>{{ item.description }}</h3>
+        </div>
       </div>
       <div *ngIf="hovered && item === activeItem">
-        <app-notepanel [childMessage] = 'item'></app-notepanel>
+        <app-notepanel [childMessage]="item" (trashEvent)="receiveTrashMessage($event)"></app-notepanel>
       </div>
     </mat-card>
   </div>

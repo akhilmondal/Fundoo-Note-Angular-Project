@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
@@ -29,6 +30,9 @@ import { DisplaynotesComponent } from './Components/displaynotes/displaynotes.co
 import { ArchiveComponent } from './Components/archive/archive.component';
 import { TrashComponent } from './Components/trash/trash.component';
 import { TrashpanelComponent } from './Components/trashpanel/trashpanel.component';
+import { UpdatenoteComponent } from './Components/updatenote/updatenote.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -44,6 +48,9 @@ import { TrashpanelComponent } from './Components/trashpanel/trashpanel.componen
     ArchiveComponent,
     TrashComponent,
     TrashpanelComponent,
+    UpdatenoteComponent,
+    
+  
   ],
   imports: [
     BrowserModule,
@@ -61,9 +68,9 @@ import { TrashpanelComponent } from './Components/trashpanel/trashpanel.componen
     MatListModule,
     MatIconModule,
     FormsModule,
-    NgFor,
-    NgIf,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

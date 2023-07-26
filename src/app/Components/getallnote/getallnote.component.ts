@@ -9,7 +9,7 @@ import { NoteService } from 'src/app/Services/noteServices/note.service';
 })
 export class GetallnoteComponent {
   data: any = [];
-  
+  trashMessage!: string;
 
   constructor(private note: NoteService) {}
   ngOnInit() {
@@ -22,10 +22,16 @@ export class GetallnoteComponent {
       this.data = response.data;
 
       console.log(this.data);
-      this.data = this.data.filter((item:any) => {
+      this.data = this.data.filter((item: any) => {
         return item.trash == false;
-      })
+      });
       //console.log(this.trashData);
     });
+  }
+  receiveTrash($event: any) {
+    this.trashMessage = $event;
+    console.log(this.trashMessage);
+    this.onSubmit();
+    
   }
 }
