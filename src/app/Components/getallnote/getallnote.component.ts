@@ -11,6 +11,7 @@ export class GetallnoteComponent {
   data: any = [];
   trashMessage!: string;
   archiveMessage!: string;
+  createData!: string;
 
   constructor(private note: NoteService) {}
   ngOnInit() {
@@ -40,7 +41,11 @@ export class GetallnoteComponent {
   receiveArchive($event: any) {
     this.archiveMessage = $event;
     console.log(this.archiveMessage);
-    
+
+    this.onSubmit();
+  }
+  createMessage($event: any) {
+    this.createData = $event;
     this.onSubmit();
   }
 }
