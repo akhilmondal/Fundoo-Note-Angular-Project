@@ -10,6 +10,7 @@ export class TrashComponent {
   hovered: boolean = false;
   activeItem: string | null = null;
   data: any = [];
+  receiveMessage: string = '';
 
   constructor(private note: NoteService) {}
   ngOnInit() {
@@ -30,11 +31,13 @@ export class TrashComponent {
     this.note.getnote().subscribe((response: any) => {
       console.log(response);
       this.data = response.data;
-
-      console.log(this.data);
       this.data = this.data.filter((item: any) => {
         return item.trash == true;
       });
     });
+  }
+  receiveData($event: any) {
+    this.receiveMessage = $event;
+    this.onSubmit();
   }
 }

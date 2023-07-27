@@ -10,7 +10,7 @@
         <h3>{{ items.description }}</h3>
       </div>
       <div *ngIf="hovered && items === activeItem">
-        <app-trashpanel [childmessage] = "items"></app-trashpanel>
+        <app-trashpanel [childmessage] = "items" (sendEvent)="receiveData($event)"></app-trashpanel>
       </div>
     </mat-card>
   </div>

@@ -1,4 +1,4 @@
-<app-createnote (createEvent)="createMessage($event)"></app-createnote>
+<app-createnote (createEvent)="receiveRefresh($event)"></app-createnote>
 
-<app-displaynotes [notes]="data" (trashEventDisplay)="receiveTrash($event)" (archiveEventDisplay)="receiveArchive($event)"></app-displaynotes>
+<app-displaynotes [notes]="data" (EventDisplay)="receiveRefresh($event)"></app-displaynotes>
 <!-- <app-trash [trashNotes]="data"></app-trash> -->

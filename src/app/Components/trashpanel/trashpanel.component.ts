@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NoteService } from 'src/app/Services/noteServices/note.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { NoteService } from 'src/app/Services/noteServices/note.service';
 })
 export class TrashpanelComponent {
   @Input() childmessage: any;
+  @Output() sendEvent = new EventEmitter<string>();
   constructor(private note: NoteService) {}
 
   deleteNote() {
@@ -16,6 +17,16 @@ export class TrashpanelComponent {
     };
     this.note.deleteNoteById(payload).subscribe((response: any) => {
       console.log(response);
+      this.sendEvent.emit(response);
+    });
+  }
+  unArchiveNote() {
+    let payload = {
+      id: [this.childmessage._id],
+    };
+    this.note.archiveNoteById(payload).subscribe((response: any) => {
+      console.log(response);
+      this.sendEvent.emit(response);
     });
   }
 }
