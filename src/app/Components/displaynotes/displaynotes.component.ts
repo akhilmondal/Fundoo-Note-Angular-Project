@@ -13,8 +13,10 @@ export class DisplaynotesComponent {
   activeItem: string | null = null;
   trashMessage!: string;
   archiveMessage!: string;
-  @Output() trashEventDisplay = new EventEmitter<string>();
+  @Output() EventDisplay = new EventEmitter<string>();
   @Output() archiveEventDisplay = new EventEmitter<string>();
+  @Output() updateEventDisplay = new EventEmitter<string>();
+
 
   constructor(private dialog: MatDialog) {}
 
@@ -36,15 +38,13 @@ export class DisplaynotesComponent {
 
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log('The dialog was closed');
+      this.EventDisplay.emit(result)
+
     });
   }
-  receiveTrashMessage($event: any) {
+  receiveRefreshMessage($event: any) {
     this.trashMessage = $event;
     console.log(this.trashMessage);
-    this.trashEventDisplay.emit(this.trashMessage);
-  }
-  receiveArchiveMessage($event: any) {
-    this.archiveMessage = $event;
-    this.archiveEventDisplay.emit(this.archiveMessage);
+    this.EventDisplay.emit(this.trashMessage);
   }
 }

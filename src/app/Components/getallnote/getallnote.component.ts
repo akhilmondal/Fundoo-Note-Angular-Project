@@ -23,7 +23,6 @@ export class GetallnoteComponent {
       console.log(response);
       this.data = response.data;
 
-      console.log(this.data);
       this.data = this.data.filter((item: any) => {
         return item.trash == false;
       });
@@ -33,19 +32,8 @@ export class GetallnoteComponent {
       //console.log(this.trashData);
     });
   }
-  receiveTrash($event: any) {
+  receiveRefresh($event: any) {
     this.trashMessage = $event;
-    this.onSubmit();
-  }
-
-  receiveArchive($event: any) {
-    this.archiveMessage = $event;
-    console.log(this.archiveMessage);
-
-    this.onSubmit();
-  }
-  createMessage($event: any) {
-    this.createData = $event;
     this.onSubmit();
   }
 }

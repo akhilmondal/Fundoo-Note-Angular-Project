@@ -9,16 +9,13 @@ import { NoteService } from 'src/app/Services/noteServices/note.service';
 export class CreatenoteComponent {
   submitted = false;
   showDescription: boolean = false;
-  title:any;
+  title: any;
   description: any;
   @Output() createEvent = new EventEmitter<boolean>();
-  constructor(
-    private note: NoteService
-  ) {}
-
+  constructor(private note: NoteService) {}
 
   onSubmit() {
-    this.submitted = true
+    this.submitted = true;
     if (this.submitted) {
       let payload = {
         title: this.title,
@@ -26,10 +23,12 @@ export class CreatenoteComponent {
       };
       this.note.createnote(payload).subscribe((response: any) => {
         console.log('Note created Successfully', response);
+        this.title = '';
+        this.description = '';
       });
     }
-    this.createEvent.emit(this.submitted)
+    this.showDescription = !this.showDescription;
+
+    this.createEvent.emit(this.submitted);
   }
 }
-
-

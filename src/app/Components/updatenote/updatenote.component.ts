@@ -1,6 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { MatDialogModule } from '@angular/material/dialog';
 import { NoteService } from 'src/app/Services/noteServices/note.service';
 
 @Component({
@@ -12,6 +11,7 @@ export class UpdatenoteComponent {
   title: any;
   description: any;
   id: any;
+
   constructor(
     public dialogRef: MatDialogRef<UpdatenoteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,

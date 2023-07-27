@@ -69,7 +69,6 @@ mat-toolbar {
 .icon-items {
   margin: 20px;
   padding: 5px;
-  
 }
 
 .nav-list {
@@ -78,7 +77,7 @@ mat-toolbar {
   letter-spacing: 1px;
 
   a {
-    border-radius: 15%;
+    border-radius: 0 20px 20px 0;
   }
   a:focus {
     background-color: #feefc3;
