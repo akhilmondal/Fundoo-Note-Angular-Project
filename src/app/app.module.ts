@@ -15,6 +15,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './Components/registration/registration.component';
@@ -30,8 +31,8 @@ import { ArchiveComponent } from './Components/archive/archive.component';
 import { TrashComponent } from './Components/trash/trash.component';
 import { TrashpanelComponent } from './Components/trashpanel/trashpanel.component';
 import { UpdatenoteComponent } from './Components/updatenote/updatenote.component';
-import {MatDialogModule} from '@angular/material/dialog';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { PipePipe } from './Pipe/filterPipe/pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -48,8 +49,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     TrashComponent,
     TrashpanelComponent,
     UpdatenoteComponent,
-    
-  
+    PipePipe,
   ],
   imports: [
     BrowserModule,
@@ -68,8 +68,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatIconModule,
     FormsModule,
     MatSelectModule,
-    MatDialogModule
-    
+    MatDialogModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent],

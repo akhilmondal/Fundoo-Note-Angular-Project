@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { UpdatenoteComponent } from '../updatenote/updatenote.component';
 import { MatDialog } from '@angular/material/dialog';
+import { DataService } from 'src/app/Services/dataService/data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-displaynotes',
@@ -13,13 +15,22 @@ export class DisplaynotesComponent {
   activeItem: string | null = null;
   trashMessage!: string;
   archiveMessage!: string;
+  searchMessage!: string;
+  messageData!: string;
   @Output() EventDisplay = new EventEmitter<string>();
-  @Output() archiveEventDisplay = new EventEmitter<string>();
-  @Output() updateEventDisplay = new EventEmitter<string>();
+  subscription!: Subscription;
 
+  constructor(private dialog: MatDialog, private data: DataService) {}
+  ngOnInit() {
+    this.subscription = this.data.currentSearchInput.subscribe(
+      (message) => (this.searchMessage = message)
+    );
 
-  constructor(private dialog: MatDialog) {}
-
+    // Search Data coming from dashboard to display using data service
+    this.data.currentSearchInput.subscribe((result: any) => {
+      this.searchMessage = result;
+    });
+  }
   showPanel(item: string) {
     this.hovered = true;
     this.activeItem = item;
@@ -38,8 +49,7 @@ export class DisplaynotesComponent {
 
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log('The dialog was closed');
-      this.EventDisplay.emit(result)
-
+      this.EventDisplay.emit(result);
     });
   }
   receiveRefreshMessage($event: any) {

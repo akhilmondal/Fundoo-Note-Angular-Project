@@ -1,24 +1,42 @@
 <div class="note-icons">
-  <mat-icon
-    ><img src="assets/add_alert_FILL0_wght400_GRAD0_opsz48.png"
-  /></mat-icon>
-  <mat-icon
-    ><img src="assets/person_add_FILL0_wght400_GRAD0_opsz48.png"
-  /></mat-icon>
-  <mat-icon
-    ><img src="assets/palette_FILL0_wght400_GRAD0_opsz48.png"
-  /></mat-icon>
-  <mat-icon><img src="assets/image_FILL0_wght400_GRAD0_opsz48.png" /></mat-icon>
-  <mat-icon
-    ><img
-      src="assets/archive_FILL0_wght400_GRAD0_opsz48.png"
-      (click)="archiveNote()"
-  /></mat-icon>
-  <mat-icon
-    ><img
-      src="assets/more_vert_FILL0_wght400_GRAD0_opsz48.png"
-      (click)="showOptions()"
-  /></mat-icon>
+  <div>
+    <mat-icon
+      ><img src="assets/add_alert_FILL0_wght400_GRAD0_opsz48.png"
+    /></mat-icon>
+  </div>
+  <div>
+    <mat-icon
+      ><img src="assets/person_add_FILL0_wght400_GRAD0_opsz48.png"
+    /></mat-icon>
+  </div>
+  <div>
+    <mat-menu class="color" yPosition="below">
+      <div *ngFor="let color of colorArray">
+        mat-menu-item (click)="changeColor(color.name)"
+        [style.background]="color.name" >
+        <img src="assets/palette_FILL0_wght400_GRAD0_opsz48.png" />
+      </div>
+    </mat-menu>
+  </div>
+  <div>
+    <mat-icon
+      ><img src="assets/image_FILL0_wght400_GRAD0_opsz48.png"
+    /></mat-icon>
+  </div>
+  <div>
+    <mat-icon
+      ><img
+        src="assets/archive_FILL0_wght400_GRAD0_opsz48.png"
+        (click)="archiveNote()"
+    /></mat-icon>
+  </div>
+  <div>
+    <mat-icon
+      ><img
+        src="assets/more_vert_FILL0_wght400_GRAD0_opsz48.png"
+        (click)="showOptions()"
+    /></mat-icon>
+  </div>
 </div>
 <div>
   <mat-card>

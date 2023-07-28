@@ -1,7 +1,7 @@
 <div>
   <div class="container">
     <mat-card
-      *ngFor="let item of notes"
+      *ngFor="let item of notes | filter: searchMessage"
       (mouseenter)="showPanel(item)"
       (mouseleave)="hidePanel()"
     >

@@ -40,4 +40,9 @@ export class LoginComponent implements OnInit {
       });
     }
   }
+  enter(e: KeyboardEvent) {
+    if (e.key == 'Enter') {
+      this.onSubmit();
+    }
+  }
 }
