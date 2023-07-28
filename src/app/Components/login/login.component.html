@@ -1,5 +1,5 @@
 <mat-card>
-  <form [formGroup] = "loginForm" (ngSubmit) = "onSubmit()">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="container">
       <div class="div-container">
         <h1>Fundoo</h1>
@@ -9,11 +9,7 @@
           <p>
             <mat-form-field appearance="outline">
               <mat-label>Email</mat-label>
-              <input
-                matInput
-                placeholder="Email"
-                formControlName="email"
-              />
+              <input matInput placeholder="Email" formControlName="email" />
               <mat-error>Email required</mat-error>
             </mat-form-field>
           </p>
@@ -26,13 +22,16 @@
                 matInput
                 placeholder="Password"
                 formControlName="password"
+                (keydown)="enter($event)"
               />
               <mat-error>Password required</mat-error>
             </mat-form-field>
           </p>
         </div>
         <div class="example-button-row">
-          <button mat-button color="primary" routerLink="/forget">Forgot Password ?</button>
+          <button mat-button color="primary" routerLink="/forget">
+            Forgot Password ?
+          </button>
         </div>
         <div>
           <p>
